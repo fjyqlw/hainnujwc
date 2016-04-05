@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<Context path="/">  
+    <Resource  
+      name="ds_hnnujwc"  
+      type="javax.sql.DataSource"  
+      driverClassName="oracle.jdbc.driver.OracleDriver"  
+      maxIdle="50"  
+      maxWait="5000"  
+      username="root"   
+      password="HSwxjwptLwCwz2015-6"  
+      url="jdbc:mysql://120.24.183.211:3306/hnnu_jwc"  
+      maxActive="1000"/>  
+      
+        <Resource  
+      name="ds_tchkebiao"  
+      type="javax.sql.DataSource"  
+      driverClassName="oracle.jdbc.driver.OracleDriver"  
+      maxIdle="50"  
+      maxWait="5000"  
+      username="root"   
+      password="HSwxjwptLwCwz2015-6"  
+      url="jdbc:mysql://120.24.183.211:3306/tch_kebiao"  
+      maxActive="1000"/> 
+      
+        <Resource  
+      name="ds_stukebiao"  
+      type="javax.sql.DataSource"  
+      driverClassName="oracle.jdbc.driver.OracleDriver"  
+      maxIdle="50"  
+      maxWait="5000"  
+      username="root"   
+      password="HSwxjwptLwCwz2015-6"  
+      url="jdbc:mysql://120.24.183.211:3306/stu_kebiao"  
+      maxActive="1000"/> 
+      
+        <Resource  
+      name="ds_stuscore"  
+      type="javax.sql.DataSource"  
+      driverClassName="oracle.jdbc.driver.OracleDriver"  
+      maxIdle="50"  
+      maxWait="5000"  
+      username="root"   
+      password="HSwxjwptLwCwz2015-6"  
+      url="jdbc:mysql://120.24.183.211:3306/stu_score"  
+      maxActive="1000"/> 
+ <!--name:DataSource的名称-->  
+ <!--type:数据源对应的java类型，一般设计为javax.sql.DataSource-->  
+ <!--username:数据库登陆名-->  
+ <!--password:数据库登陆密码-->  
+ <!--driverClassName:指定数据库JDBC驱动程序-->  
+ <!--url:指定数据库的URL-->  
+ <!--maxIdle:连接池处于空闲状态的数据库连接的最大数目，取0表示不受限制-->  
+ <!--maxWait:连接池中数据库连接处于空闲状态的最长时间（以毫秒为单位），取0表示无限制等待时间-->  
+ <!--maxActive:连接池处于活动状态的数据库连接的最大数目，去0表示不受限制-->  
+   
+</Context>
