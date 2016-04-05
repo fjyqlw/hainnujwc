@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="hsresws"
+  id="myeclipse.1458096696546"
+  context-root="/hsresws"
+  j2ee-spec="6.0"
+  archive="hsresws.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

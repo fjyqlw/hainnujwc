@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="generator" content="PSPad editor, www.pspad.com">
+<title></title>
+</head>
+<body>
+<style>
+a{text-decoration:none;}
+.btn_addPic{
+display: inline-block;
+position: relative;
+height: 185px;
+overflow: hidden;
+padding: 0 0px;
+border: 1px solid #EBEBEB;
+background: none repeat scroll 0 0 #F3F3F3;
+color: #999999;
+font: 14px/39px 'MicroSoft Yahei','Simhei';
+cursor: pointer;
+text-align: center;
+}
+.btn_addPic em {
+background:url(btnbg.jpg) 0 0;
+display: inline-block;
+width: 185px;
+height: 185px;
+overflow: hidden;
+margin: 0px 0px 0px 0;
+line-height: 20em;
+vertical-align: middle;
+}
+.btn_addPic:hover em{
+background-position:0px 0;}
+.filePrew {
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+width: 185px;
+height: 185px;
+cursor: pointer;
+opacity: 0;
+filter:alpha(opacity: 0);
+}
+</style>
+<form>
+  <a href="javascript:void(0);" class="btn_addPic"><span><em></em></span>
+  <input type="file" tabindex="3" title="支持jpg、jpeg、gif、png格式，文件小于5M" size="3" name="pic" class="filePrew">
+  </a>
+</form>
+</body>
+</html>

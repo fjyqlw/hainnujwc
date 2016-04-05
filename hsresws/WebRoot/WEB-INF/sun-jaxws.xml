@@ -1,0 +1,11 @@
+<?xml version = "1.0"?>
+<endpoints version="2.0"
+	xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+	<endpoint name="SevPort"
+		implementation="com.lw.webservice.SevDelegate"
+		url-pattern="/SevPort">
+	</endpoint>
+	<endpoint name="RequestRESPort"
+		implementation="com.lw.methods.RequestRESDelegate"
+		url-pattern="/RequestRESPort">
+	</endpoint></endpoints>

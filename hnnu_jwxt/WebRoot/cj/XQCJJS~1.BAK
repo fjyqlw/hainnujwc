@@ -1,0 +1,201 @@
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全校性选课</title>
+<script type="text/javascript">
+/*
+window.onload = function(){
+    if(!isWeiXin()){
+    location.assign("../error/noWeiXin.html");
+       // var p = document.getElementsByTagName('p');
+        //"byshisss".innerHTML = window.navigator.userAgent;
+    }
+}
+function isWeiXin(){
+    var ua = window.navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+        return true;
+    }else{
+        return false;
+    }
+}
+*/
+</script>
+<link rel="stylesheet" href="../gongxuanke/css/my.css">
+<link rel="stylesheet" href="../gongxuanke/jquery.mobile-1.3.2.min.css">
+<script src="../gongxuanke/jquery-1.8.3.min.js"></script>
+<script src="../gongxuanke/jquery.mobile-1.3.2.min.js"></script>
+</head>
+
+<body>
+<%
+String openID=request.getParameter("openID");
+String xn=request.getParameter("xn");
+String xq=request.getParameter("xq");
+String kcxz=request.getParameter("kcxz");
+String url="http://120.24.183.211/hnnu_jwxt/cj/wtgcj.jsp?openID="+openID+"&xn="+xn+"&xq="+xq+"&kcxz="+kcxz;
+
+
+%>
+<div data-role="page" id="pageone">
+<div data-role="content">
+  <div class="myselet">
+    <form id="form">
+      <select name="jumpMenu" id="jumpMenu" data-role="none" onchange="MM_jumpMenu('parent',this,0)">
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=2014-2015&xq=<%=xq%>&kcxz=<%=kcxz%>" selected="selected"><span class="myspen">2014-2015</span></option>
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=2013-2014&xq=<%=xq%>&kcxz=<%=kcxz%>">2013-2014</option>
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=2012-2013&xq=<%=xq%>&kcxz=<%=kcxz%>">2012-2013</option>
+      </select>
+    </form>
+  </div>
+  <div class="myselet">
+    <form id="form">
+      <select name="jumpMenu"  onchange="MM_jumpMenu('parent',this,0)">
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=<%=xn%>&xq=1&kcxz=<%=kcxz %>" >1</option>
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=<%=xn%>&xq=2&kcxz=<%=kcxz%>">2</option>
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=<%=xn%>&xq=3&kcxz=<%=kcxz%>">3</option>
+      </select>
+    </form>
+  </div>
+  <div class="myselet">
+    <form id="form">
+      <select name="jumpMenu"  onchange="MM_jumpMenu('parent',this,0)">
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=<%=xn%>&xq=<%=xq%>&kcxz=" selected="selected"><font class="myspen" color="#FF0000" style="font-size:36px !important">我是红色字体</font> </option>
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=<%=xn%>&xq=<%=xq%>&kcxz=">公共必修</option>
+        <option value="http://120.24.183.211/hnnu_jwxt/cj/xqcj.jsp?openID=<%=openID%>&xn=<%=xn%>&xq=<%=xq%>&kcxz=">公共选修</option>
+      </select>
+    </form>
+  </div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="1">
+    <tr align="center">
+      <td  >学年</td>
+      <td  >学期</td>
+      <td  >课程性质</td>
+    </tr>
+    <tr align="center">
+      <td  ></td>
+      <td height="40"></td>
+      <td height="40"></td>
+    </tr>
+  </table>
+  <hr style="margin:0" />
+  <table width="100%" border="0" cellpadding="0">
+    <tr>
+      <td align="left"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;课程名称</strong></td>
+      <td align="right"><strong>成绩&nbsp;&nbsp;</strong></td>
+    </tr>
+  </table>
+  <hr />
+  <div style="margin:0" data-role="collapsible">
+    <h1>
+      <table width="100%" border="0" cellpadding="0">
+        <tr>
+          <td align="left"><strong>大众理财</strong></td>
+          <td align="right"><strong>80</strong></td>
+        </tr>
+      </table>
+    </h1>
+    <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <tr>
+        <td width="15%" align="right">学年:</td>
+        <td>2014-2015</td>
+      </tr>
+      <tr>
+        <td align="right">学期:</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td align="right">性质:</td>
+        <td>人文教育</td>
+      </tr>
+      <tr>
+        <td align="right">学分:</td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td align="right">绩点:</td>
+        <td>2.0</td>
+      </tr>
+      <tr>
+        <td align="right">成绩:</td>
+        <td align="left">80</td>
+      </tr>
+    </table>
+  </div>
+  <div style="margin:0" data-role="collapsible">
+    <h3 style="margin:0">
+      <table width="100%" border="0" cellpadding="0">
+        <tr>
+          <td align="left"><strong>虚拟现实技术与实现</strong></td>
+          <td align="right"><strong>80</strong></td>
+        </tr>
+      </table>
+    </h3>
+    <table width="100%" border="0" cellpadding="0">
+      <tr>
+        <td width="25%">学年</td>
+        <td>2014-2015</td>
+      </tr>
+      <tr>
+        <td>学期</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>课程性质</td>
+        <td>人文教育</td>
+      </tr>
+      <tr>
+        <td>学分</td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>绩点</td>
+        <td>2.0</td>
+      </tr>
+      <tr>
+        <td>成绩</td>
+        <td align="left">80</td>
+      </tr>
+    </table>
+  </div>
+  <div style="margin:0" data-role="collapsible">
+    <h1>
+      <table width="100%" border="0" cellpadding="0">
+        <tr>
+          <td align="left"><strong>计算机组成原理</strong></td>
+          <td align="right"><strong>80</strong></td>
+        </tr>
+      </table>
+    </h1>
+    <table width="100%" border="0" cellpadding="0">
+      <tr>
+        <td width="25%">学年</td>
+        <td>2014-2015</td>
+      </tr>
+      <tr>
+        <td>学期</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>课程性质</td>
+        <td>人文教育</td>
+      </tr>
+      <tr>
+        <td>学分</td>
+        <td>1.0</td>
+      </tr>
+      <tr>
+        <td>绩点</td>
+        <td>2.0</td>
+      </tr>
+      <tr>
+        <td>成绩</td>
+        <td align="left">80</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
